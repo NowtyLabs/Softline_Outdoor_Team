@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Softline Outdoor Team Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo-area">
+                <div class="logo-placeholder">
+                    <span>S</span>
+                </div>
+                <h1>Softline</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li class="active" data-page="home"><i class="fas fa-th-large"></i> Dashboard</li>
+                    <li data-page="staff"><i class="fas fa-users"></i> Laborers</li>
+                    <li data-page="vehicles"><i class="fas fa-truck"></i> Vehicles</li>
+                    <li data-page="generator"><i class="fas fa-file-invoice"></i> Generate Pass</li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <p>Outdoor Team System v1.0</p>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-bar">
+                <h2 id="page-title">Dashboard</h2>
+                <div class="user-info">
+                    <span>Welcome, Admin</span>
+                    <div class="avatar">A</div>
+                </div>
+            </header>
+
+            <div id="content-area">
+                <!-- Pages will be injected here -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal for adding/editing -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3 id="modal-title">Add Item</h3>
+            <form id="item-form">
+                <!-- Dynamic form fields -->
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal for Preview & Download -->
+    <div id="preview-modal" class="modal">
+        <div class="modal-content" style="max-width: 900px; max-height: 90vh; overflow-y: auto;">
+            <span class="close-preview" style="position: absolute; top: 1rem; right: 1.5rem; font-size: 2rem; cursor: pointer;">&times;</span>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <h3>Pass Preview</h3>
+                <button class="btn btn-primary" onclick="downloadPassAsImage()"><i class="fas fa-download"></i> Download JPG Image</button>
+            </div>
+            <div id="preview-container" style="background: #e2e8f0; padding: 2rem; display: flex; justify-content: center;">
+                <!-- Output logic will clone pass here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Print Template (HIDDEN) -->
+    <div id="print-template" class="print-only">
+        <!-- To be filled dynamically -->
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
